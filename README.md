@@ -28,8 +28,9 @@ sns:
 Getting started
 ---------------
 The following curl commands can be run to verify that it is working (create queue, send message, receive message, assumes host is 'sqs.docker'):
-`$ curl http://sqs.docker:9494 -d "Action=CreateQueue&QueueName=test-queue&AWSAccessKeyId=access%20key%20id"`
-`$ curl http://sqs.docker:9494 -d "Action=SendMessage&QueueUrl=http%3A%2F%2Fsqs.docker%3A9494%2Ftest-queue&MessageBody=testing123&AWSAccessKeyId=access%20key%20id"`
+
+`$ curl http://sqs.docker:9494 -d "Action=CreateQueue&QueueName=test-queue&AWSAccessKeyId=access%20key%20id"`  
+`$ curl http://sqs.docker:9494 -d "Action=SendMessage&QueueUrl=http%3A%2F%2Fsqs.docker%3A9494%2Ftest-queue&MessageBody=testing123&AWSAccessKeyId=access%20key%20id"`  
 `$ curl http://sqs.docker:9494 -d "Action=ReceiveMessage&QueueUrl=http%3A%2F%2Fsqs.docker%3A9494%2Ftest-queue&AWSAccessKeyId=access%20key%20id"`
 
 

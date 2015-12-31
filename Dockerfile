@@ -4,7 +4,7 @@ RUN gem install thin fake_sqs
 
 RUN useradd -u 1000 -M docker \
   && mkdir -p /messages/sqs \
-  && chown docker /sqs
+  && chown docker /messages/sqs
 USER docker
 
 VOLUME /sqs

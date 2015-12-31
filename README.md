@@ -5,7 +5,7 @@ Docker image for the fake_sqs gem.
 Features
 ---------
 * Uses thin as webserver to prevent reverse dns lookup (causing big slowdowns)
-* Exposes fake_sqs database to "/sqs" VOLUME for file based verification
+* Exposes fake_sqs database to "/messages/sqs" VOLUME for file based verification
   * Note that fake_sqs does not persist messages, just queues
 
 Running

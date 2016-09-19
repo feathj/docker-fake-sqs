@@ -17,7 +17,7 @@ Note that `VIRTUAL_HOST` environment variable can be added if run with dinghy cl
 
 Or from docker-compose.yml:
 ```
-sns:
+sqs:
   image: feathj/fake-sqs
   ports:
     - "9494:9494"

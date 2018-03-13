@@ -1,9 +1,18 @@
-FROM ruby:2.2
+FROM ruby:2.2-alpine
 
-COPY Gemfile /Gemfile
-RUN bundle install
+COPY Gemfile Gemfile.lock /
 
-RUN useradd -u 1000 -M docker \
+RUN apk add --no-cache --virtual .ruby-builddeps \
+      autoconf \
+      g++ \
+      git \
+      make \
+    && bundle install \
+    && apk add --no-cache --virtual .ruby-rundeps \
+      libstdc++ \
+    && apk del .ruby-builddeps
+
+RUN adduser -u 1000 -D -H docker \
   && mkdir -p /messages/sqs \
   && chown docker /messages/sqs
 USER docker
